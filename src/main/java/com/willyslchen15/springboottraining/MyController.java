@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MyController {
 
     @Autowired
-    @Qualifier("canonPrinter")
+    @Qualifier("myPrinter")
     private Printer printer;
 
     @RequestMapping("/test")
