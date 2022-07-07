@@ -3,17 +3,27 @@ package com.willyslchen15.springboottraining;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 @RequestMapping("/detail")
 public class MyController {
 
     @RequestMapping("/product")
-    public String product() {
-        return "Apple, Orange";
+    public Store product() {
+        Store store = new Store();
+        List<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Orange");
+        store.setProductList(list);
+        return store;
     }
 
     @RequestMapping("/user")
-    public String user() {
-        return "Name : Willy";
+    public Student user() {
+        Student student = new Student();
+        student.setName("Willy");
+        return student;
     }
 }
